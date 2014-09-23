@@ -10,9 +10,21 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
 gem 'unicorn'
 
 group :production do
   gem 'rails_12factor'
+end
+
+group :development do
+  gem 'pry', '~> 0.9.12'
+  gem 'pry-rails', '~> 0.3.2'
+  gem 'pry-nav', '~> 0.2.3'
+  gem 'spring'
+  gem 'guard-minitest'
+  gem 'guard-livereload'
+end
+
+group :development, :test do
+  gem 'sandi_meter'
 end
