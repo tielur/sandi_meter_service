@@ -8,8 +8,7 @@ describe 'Sandi Meter Results' do
   end
 
   it 'is in the proper directory' do
-    puts @results
-    @pwd.must_equal 'this/dir'
+    @results.must_equal 'stuff I want to see'
   end
 
   it '100% of classes are under 100 lines' do
