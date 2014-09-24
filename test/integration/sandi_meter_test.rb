@@ -2,8 +2,13 @@ require 'test_helper'
 
 describe 'Sandi Meter Results' do
   before :all do
+    @pwd = %x{ pwd }
     results = %x{ sandi_meter }
     @classes,@methods,@parameters,@controllers = results.scan(/(...)[%]/).flatten.map{ |s| s.to_i }
+  end
+
+  it 'is in the proper directory' do
+    @pwd.must_equal 'this/dir'
   end
 
   it '100% of classes are under 100 lines' do
