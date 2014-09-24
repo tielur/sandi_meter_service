@@ -3,11 +3,12 @@ require 'test_helper'
 describe 'Sandi Meter Results' do
   before :all do
     @pwd = %x{ pwd }
-    results = %x{ sandi_meter }
-    @classes,@methods,@parameters,@controllers = results.scan(/(...)[%]/).flatten.map{ |s| s.to_i }
+    @results = %x{ sandi_meter -d }
+    @classes,@methods,@parameters,@controllers = @results.scan(/(...)[%]/).flatten.map{ |s| s.to_i }
   end
 
   it 'is in the proper directory' do
+    puts @results
     @pwd.must_equal 'this/dir'
   end
 
