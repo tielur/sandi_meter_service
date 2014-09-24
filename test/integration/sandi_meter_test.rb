@@ -3,7 +3,7 @@ require 'test_helper'
 describe 'Sandi Meter Results' do
   before :all do
     @pwd = %x{ pwd }
-    @results = %x{ sandi_meter -d }
+    @results = %x{ sandi_meter --path ./app }
     @classes,@methods,@parameters,@controllers = @results.scan(/(...)[%]/).flatten.map{ |s| s.to_i }
   end
 
