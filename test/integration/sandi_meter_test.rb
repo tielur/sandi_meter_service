@@ -7,10 +7,6 @@ describe 'Sandi Meter Results' do
     @classes,@methods,@parameters,@controllers = @results.scan(/(...)[%]/).flatten.map{ |s| s.to_i }
   end
 
-  it 'is in the proper directory' do
-    @results.must_equal 'stuff I want to see'
-  end
-
   it '100% of classes are under 100 lines' do
     @classes.must_equal 100
   end
