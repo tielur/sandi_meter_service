@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'unicorn'
+gem 'omniauth-github'
 
 group :production do
   gem 'rails_12factor'
@@ -27,4 +28,5 @@ end
 
 group :development, :test do
   gem 'sandi_meter'
+  gem 'dotenv-rails'
 end
