@@ -2,8 +2,9 @@ require 'test_helper'
 
 describe 'Sandi Meter Results' do
   before :all do
-    results = %x{ sandi_meter }
-    @classes,@methods,@parameters,@controllers = results.scan(/(...)[%]/).flatten.map{ |s| s.to_i }
+    @pwd = %x{ pwd }
+    @results = %x{ sandi_meter --path ./app }
+    @classes,@methods,@parameters,@controllers = @results.scan(/(...)[%]/).flatten.map{ |s| s.to_i }
   end
 
   it '100% of classes are under 100 lines' do
