@@ -10,7 +10,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
 gem 'unicorn'
 gem 'omniauth-github'
 
@@ -18,6 +17,16 @@ group :production do
   gem 'rails_12factor'
 end
 
-group :test, :development do
+group :development do
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-nav'
+  gem 'spring'
+  gem 'guard-minitest'
+  gem 'guard-livereload'
+end
+
+group :development, :test do
+  gem 'sandi_meter'
   gem 'dotenv-rails'
 end
